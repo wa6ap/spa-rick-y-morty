@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #3c484e;
+  font-family: 'Open Sans', sans-serif;
+  transition: 1s ease all;
+}
+
+body.dark {
+  background-color: #232931;
+}
+.Header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  max-width: inherit;
+  width: 100%;
+  margin: 0 auto;
+  transition: 1s ease all;
+}
+
+.Header a {
+  text-decoration: none;
+  color: #15302C;
+}
+
+.Header-nav{
+  display: flex;
+  align-items: center;
+}
+
+body.dark .nav-element{
+  color: #eeeeee;
+}
+
+.switch {
+  background: #343D5B;
+  border-radius: 1000px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+  margin-left: 1.5em;
+  border: 3px solid rgba(0, 0, 0, 0.3);
+}
+
+.switch::after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  background: #F1F1F1;
+  left: 0;
+  right: unset;
+  border-radius: 100px;
+  transition: 1s ease all;
+  box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.2);
+}
+
+.switch.active {
+  background: orange;
+  color: #000;
+}
+
+.switch.active::after {
+  left: unset;
+  right: 0;
+}
+
+.switch span {
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  display: block;
+  background: none;
+  color: #FFF;
+}
+
+.Main {
+  padding: 10px;
+  display: grid;
+  justify-content: center;
+}
+
+.Characters {
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5rem;
+  grid-row-gap: 1.5em;
+  display: grid;
+}
+
+.Characters-inner {
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 1.5rem;
+  grid-row-gap: 1.5em;
+  display: grid;
+}
+
+.Characters-card {
+  text-decoration: none;
+  box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
+  border-radius: 5px;
+  margin: 0 0 20px 0;
+  display: block;
+  animation-duration: 2s;
+  animation-name: fade;
+}
+
+body.dark .Characters-card{
+  background-color: #393e46;
+}
+
+.Characters-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px 5px 0 0;
+}
+
+.Characters-card h2 {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
+
+body.dark .Characters-card h2{
+  color: #4ecca3;
+}
+
+.Characters-card h3 {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: left;
+  margin: 20px;
+}
+
+body.dark .Characters-card h3{
+  color: #4ecca3;
+}
+
+.Characters-item {
+  text-decoration: none;
+  box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
+  border-radius: 5px;
+  margin: 0 0 20px 0;
+  display: block;
+  animation-duration: 2s;
+  animation-name: fade;
+  max-width: 300px !important;
+}
+body.dark .Characters-item {
+  background-color: #393e46;
+  box-shadow: 8px 14px 38px rgba(238, 238, 238, 0.041), 1px 3px 8px rgba(238, 238, 238, 0.041);
+}
+
+.Characters-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px 5px 0 0;
+}
+
+.Characters-item h2 {
+  font-size: 18px;
+  font-weight: 300;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+body.dark .Characters-item h2{
+  color: #4ecca3;
+}
+
+.Characters-item a {
+  text-decoration: none;
+  color: #026C86;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.loading {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error404{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-content: center;
+  text-align:center;
+  width: 100%;
+  animation-duration: 2s;
+  animation-name: fade;
+}
+.error404 h2{
+  align-self: center;
+}
+body.dark .error404 h2{
+  color: #4ecca3;
+}
+.error404 img {
+  margin-top: 50px;
+  align-self: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .Characters {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .Characters {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .error404 img {
+    width: 295px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .Characters {
+    grid-template-columns: 1fr;
+  }
+  .error404 img {
+    width: 240px;
+  }
+}
